@@ -2,7 +2,7 @@
 
 Welcome to my personal developer portfolio! This project is a digital representation of my journey, showcasing my technical skills, creative projects, and professional experience as a Software Engineer and UI/UX Designer. Built from the ground up to be lightning-fast, highly responsive, and visually stunning.
 
-[![Live Site Preview](https://tauqeer-portfolio.vercel.app/)](#) *(Live demo coming soon or [View Live Site](https://tauqeer-portfolio.vercel.app/))*
+[![Live Site Preview](https://tauqeer7khan.netlify.app/)](#) *(Live demo coming soon or [View Live Site](https://tauqeer7khan.netlify.app/))*
 
 ---
 
