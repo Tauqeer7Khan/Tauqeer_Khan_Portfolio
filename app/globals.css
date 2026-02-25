@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* ═══════════════════════════════════════════
+   DARK THEME
+   ═══════════════════════════════════════════ */
+[data-theme="dark"] {
+  --background: #0a0118;
+  --background-secondary: #110720;
+  --background-tertiary: #1a0f2e;
+  --foreground: #ffffff;
+  --foreground-secondary: rgba(255, 255, 255, 0.8);
+  --foreground-tertiary: rgba(255, 255, 255, 0.55);
+  --accent-primary: #fb923c;
+  --accent-secondary: #fed7aa;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg-hover: rgba(255, 255, 255, 0.1);
+  --glow-primary: rgba(251, 146, 60, 0.3);
+  --glow-secondary: rgba(147, 51, 234, 0.2);
+}
+
+/* ═══════════════════════════════════════════
+   LIGHT THEME – high-contrast, warm palette
+   ═══════════════════════════════════════════ */
+[data-theme="light"] {
+  --background: #faf9f7;
+  --background-secondary: #f3f1ed;
+  --background-tertiary: #e8e4dd;
+  --foreground: #1c1917;
+  --foreground-secondary: #44403c;
+  --foreground-tertiary: #78716c;
+  --accent-primary: #ea580c;
+  --accent-secondary: #c2410c;
+  --border-color: rgba(28, 25, 23, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(0, 0, 0, 0.04);
+  --glow-primary: rgba(234, 88, 12, 0.12);
+  --glow-secondary: rgba(147, 51, 234, 0.08);
+}
+
+/* ═══════════════════════════════════════════
+   BASE RESET & BODY
+   ═══════════════════════════════════════════ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 0.8; transform: scale(1); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ═══════════════════════════════════════════
+   GRADIENT TEXT & BACKGROUND UTILITIES
+   ═══════════════════════════════════════════ */
+.text-gradient-orange {
+  background: linear-gradient(to right, #fb923c, #fed7aa, #fb923c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient 3s linear infinite;
+}
+
+.text-gradient-orange:hover {
+  animation: gradient 1.5s linear infinite;
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(to right, #fb923c, #fed7aa, #fb923c);
+  background-size: 200% auto;
+  animation: gradient 3s linear infinite;
+}
+
+.bg-gradient-orange:hover {
+  animation: gradient 1.5s linear infinite;
+}
+
+.hover-text-gradient-orange {
+  transition: all 0.3s ease;
+}
+
+.hover-text-gradient-orange:hover {
+  background: linear-gradient(to right, #fb923c, #fed7aa, #fb923c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient 1.5s linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   MICRO-ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hover-float:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.group:hover .animate-float-subtle {
+  animation: float-subtle 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes timeline-flow {
+  0%, 100% { opacity: 0.3; transform: translateY(-50%); }
+  50% { opacity: 1; transform: translateY(50%); }
+}
+
+.animate-timeline-flow {
+  animation: timeline-flow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7); }
+  100% { box-shadow: 0 0 0 20px rgba(251, 146, 60, 0); }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   LIGHT-MODE CARD SHADOW (elevation cue)
+   ═══════════════════════════════════════════ */
+[data-theme="light"] .card-elevated {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+}
