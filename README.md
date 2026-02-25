@@ -74,7 +74,7 @@ Interested in exploring the codebase or running it locally? Follow these simple 
 
 ## 🚚 Deployment
 
-This portfolio is easily deployable on [Vercel](https://vercel.com/). Changes made to the `main` branch trigger automatic production builds, keeping the live site strictly up to date with the latest code.
+This portfolio is easily deployable on [Netlify](https://www.netlify.com/). Changes made to the `main` branch trigger automatic production builds, keeping the live site strictly up to date with the latest code.
 
 ---
 
